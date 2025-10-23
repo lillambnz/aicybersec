@@ -4,11 +4,11 @@
   "description": "AI Cybersecurity Services Platform",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && npx @cloudflare/next-on-pages",
     "start": "next start",
     "lint": "next lint",
-    "pages:build": "npx @cloudflare/next-on-pages",
-    "pages:deploy": "npm run pages:build && wrangler pages deploy .vercel/output/static",
+    "pages:build": "npm run build",
+    "pages:deploy": "npm run build && wrangler pages deploy .vercel/output/static",
     "pages:dev": "npx @cloudflare/next-on-pages --experimental-minify"
   },
   "dependencies": {
