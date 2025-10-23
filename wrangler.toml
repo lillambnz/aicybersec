@@ -1,0 +1,32 @@
+name = "aicybersec"
+compatibility_date = "2025-01-01"
+pages_build_output_dir = ".vercel/output/static"
+
+# D1 Database for storing contacts, bookings, etc.
+[[d1_databases]]
+binding = "DB"
+database_name = "aicybersec_db"
+database_id = "your-database-id"  # Create with: wrangler d1 create aicybersec_db
+
+# KV namespace for caching and sessions
+[[kv_namespaces]]
+binding = "KV"
+id = "your-kv-id"  # Create with: wrangler kv:namespace create KV
+
+# R2 bucket for file storage
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "aicybersec-assets"
+
+# AI binding for Cloudflare AI models
+[ai]
+binding = "AI"
+
+# Analytics Engine for custom analytics
+[[analytics_engine_datasets]]
+binding = "ANALYTICS"
+
+# Environment variables
+[vars]
+SITE_URL = "https://aicybersec.pages.dev"
+CONTACT_EMAIL = "contact@aicybersec.com"
